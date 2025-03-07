@@ -73,4 +73,21 @@ systemctl start nginx
 cd /etc/nginx/sites-available
 
 
-sudo snap install --classic certbot
+sudo apt-get install python3-certbot-nginx
+sudo certbox --nginx
+systemctl enable nginx
+
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw allow 5432
+sudo ufw enable
+sudo ufw status
+
+
+https://certbot.eff.org/instructions?ws=nginx&os=pip
+https://ap.www.namecheap.com/Domains/DomainControlPanel/ntltsrs.site/domain/
+https://cloud.digitalocean.com/networking/domains/ntltsrs.site?i=b6d9de
+
+
+
+docker build -t fastapi .
